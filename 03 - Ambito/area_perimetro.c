@@ -15,7 +15,7 @@ int calcola_perimetro_quadrato() {
 }
 
 int main() {
-    int lato = 5;
+    // int lato = 5;
     int area = calcola_area_quadrato();
     int perimetro = calcola_perimetro_quadrato();
     printf("Il valore dell'area è: %d \n", area);
