@@ -1,14 +1,12 @@
 #include <stdio.h>
 
 /*
- * Definizione della procedura di stampa.
- * Questa funzione riceve i dati come parametri e il suo unico scopo è stamparli.
- * Poiché non deve restituire alcun valore, il suo tipo di ritorno è 'void'.
+ * Procedura di stampa.
  */
 void stampaDati(char* nome, char* cognome, int eta) {
-    printf("Nome:    %s\n", nome);
-    printf("Cognome: %s\n", cognome);
-    printf("Eta':    %d anni\n", eta);
+    printf("Nome:\t\t%s\n", nome);
+    printf("Cognome:\t%s\n", cognome);
+    printf("Eta':\t\t%d anni\n", eta);
 }
 
 
