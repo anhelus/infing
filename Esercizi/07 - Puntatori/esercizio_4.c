@@ -1,15 +1,30 @@
 #include <stdio.h>
 
-void puntatore_a_void(char c) {
-    printf("Ricevuto il carattere '%c'.\n", c);
-    void* generic_ptr = &c;
-    printf("L'indirizzo memorizzato nel puntatore a void e': %p\n", generic_ptr);
-    // Cast a puntatore del tipo corretto
-    char* char_ptr = (char*)generic_ptr;
-    printf("Dopo il cast, il valore dereferenziato e': '%c'\n", *char_ptr);
+// Funzione con passaggio per valore
+void incrementa_per_valore(int x) {
+    printf("[INCREMENTA PER VALORE] - Il valore di x è %d\n", x);
+    x++;
+    printf("[INCREMENTA PER VALORE] - Il valore incrementato è %d\n", x);
 }
 
+// Funzione con passaggio per riferimento
+void incrementa_per_riferimento(int* ptr_x) {
+    printf("[INCREMENTA PER RIFERIMENTO] - Il valore di x è %d\n", *ptr_x);
+    // Dereferenziamo il puntatore e incrementiamo il valore puntato.
+    (*ptr_x)++;    
+    printf("[INCREMENTA PER RIFERIMENTO] - Il valore incrementato è: %d\n", *ptr_x);
+}
+
+
 int main() {
-    puntatore_a_void('Z');
+    int x = 10;
+    // 1. Passaggio per valore
+    printf("Passaggio per valore\nIl valore di x prima della chiamata è: %d\n", x);
+    incrementa_per_valore(x);
+    printf("Il valore di x dopo la chiamata è: %d\n", x);
+    // 2. Passaggio per riferimento
+    printf("Passaggio per riferimento\nIl valore di x prima della chiamata è: %d\n", x);
+    incrementa_per_riferimento(&x);
+    printf("Il valore di x dopo la chiamata è: %d\n", x);
     return 0;
 }
