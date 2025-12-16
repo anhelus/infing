@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /*
- * Funzione che dereferenzia un puntatore ad intero e verifica
+ * Procedura che dereferenzia un puntatore ad intero e verifica
  * che sia uguale al valore puntato.
  */
 void deferenzia_compara_intero(int val, int* ptr) {
@@ -16,8 +16,6 @@ void deferenzia_compara_intero(int val, int* ptr) {
 
 int main() {
     int var_int = 10;
-    double var_double = 20.5;
-
     deferenzia_compara_intero(var_int, &var_int);
     int altra_var_int = 99;
     deferenzia_compara_intero(var_int, &altra_var_int);

@@ -15,7 +15,8 @@ void mostra_puntatore_decimale(double* ptr) {
 int main() {
     int var_int = 10;
     double var_double = 20.5;
-    mostra_puntatore_intero(&var_int);
+    int* punt_var_int = &var_int;
+    mostra_puntatore_intero(punt_var_int);
     mostra_puntatore_decimale(&var_double);
     return 0;
 }
