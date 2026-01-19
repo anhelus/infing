@@ -8,8 +8,8 @@ void salvaDatiSuFile(char* nome, char* cognome, int eta, const char* nome_file) 
     // 1. Dichiarazione del puntatore a file
     FILE* file_puntatore;
 
-    // 2. Apertura del file in modalità di lettura
-    file_puntatore = fopen(nome_file, "w");
+    // 2. Creazione del file in modalità di lettura/scrittura
+    file_puntatore = fopen(nome_file, "w+");
 
     // 3. Controllo dell'apertura
     // Se fopen non riesce ad aprire il file restituisce NULL.
