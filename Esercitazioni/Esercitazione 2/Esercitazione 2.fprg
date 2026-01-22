@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Esercitazione 1"/>
+        <attribute name="authors" value="Angelo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-01-03 04:37:54 "/>
+        <attribute name="created" value="QW5nZWxvO1RBTUFSUk9HOzIwMjYtMDEtMDM7IjA0OjI3OjUxICI7MjM5MQ=="/>
+        <attribute name="edited" value="QW5nZWxvO1RBTUFSUk9HOzIwMjYtMDEtMDM7IjA0OjM3OjU0ICI7MTsyNTAz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="l" type="Integer" array="False" size=""/>
+            <output expression="&quot;Inserire il numero di voti da registrare.&quot;" newline="True"/>
+            <input variable="l"/>
+            <while expression="l &lt; 1">
+                <output expression="&quot;Il numero di voti da registrare deve essere maggiore o uguale ad 1!&quot;" newline="True"/>
+                <input variable="l"/>
+            </while>
+            <declare name="voti" type="Integer" array="True" size="l"/>
+            <call expression="caricaVoti(l, voti)"/>
+            <call expression="stampaVoti(l, voti)"/>
+        </body>
+    </function>
+    <function name="caricaVoti" type="None" variable="">
+        <parameters>
+            <parameter name="l" type="Integer" array="False"/>
+            <parameter name="voti" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="l-1" direction="inc" step="1">
+                <input variable="voti[i]"/>
+                <while expression="voti[i] &lt; 18 || voti[i] &gt; 30">
+                    <output expression="&quot;Voto non valido! Inserire un valore compreso tra 18 e 30.&quot;" newline="True"/>
+                    <input variable="voti[i]"/>
+                </while>
+            </for>
+        </body>
+    </function>
+    <function name="stampaVoti" type="None" variable="">
+        <parameters>
+            <parameter name="l" type="Integer" array="False"/>
+            <parameter name="voti" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="l-1" direction="inc" step="1">
+                <output expression="&quot;Materia &quot; &amp;(i+1) &amp; &quot;: &quot; &amp;voti[i]" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
