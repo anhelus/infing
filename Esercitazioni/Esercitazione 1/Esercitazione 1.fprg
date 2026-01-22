@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Esercitazione 1"/>
+        <attribute name="authors" value="Angelo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-01-04 07:27:16 "/>
+        <attribute name="created" value="QW5nZWxvO1RBTUFSUk9HOzIwMjYtMDEtMDQ7IjA0OjIzOjUxICI7MjM4OA=="/>
+        <attribute name="edited" value="QW5nZWxvO1RBTUFSUk9HOzIwMjYtMDEtMDQ7IjA3OjI3OjE2ICI7MjsyNTA1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="N, min, max" type="Integer" array="False" size=""/>
+            <assign variable="N" expression="5"/>
+            <declare name="V, U, S" type="Integer" array="True" size="N"/>
+            <call expression="caricaVettore(V, N, true)"/>
+            <call expression="caricaVettore(U, N, false)"/>
+            <call expression="sommaVettori(V, U, S, N)"/>
+            <assign variable="min" expression="trovaMin(V, N)"/>
+            <assign variable="max" expression="trovaMax(V, N)"/>
+        </body>
+    </function>
+    <function name="caricaVettore" type="None" variable="">
+        <parameters>
+            <parameter name="V" type="Integer" array="True"/>
+            <parameter name="N" type="Integer" array="False"/>
+            <parameter name="p" type="Boolean" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="N-1" direction="inc" step="1">
+                <do expression="p != (V[i] % 2 == 0)">
+                    <assign variable="V[i]" expression="random(100)"/>
+                </do>
+            </for>
+        </body>
+    </function>
+    <function name="sommaVettori" type="None" variable="">
+        <parameters>
+            <parameter name="V" type="Integer" array="True"/>
+            <parameter name="U" type="Integer" array="True"/>
+            <parameter name="S" type="Integer" array="True"/>
+            <parameter name="N" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="N-1" direction="inc" step="1">
+                <assign variable="S[i]" expression="V[i] + U[i]"/>
+            </for>
+        </body>
+    </function>
+    <function name="trovaMax" type="Integer" variable="max">
+        <parameters>
+            <parameter name="V" type="Integer" array="True"/>
+            <parameter name="N" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i, max" type="Integer" array="False" size=""/>
+            <assign variable="max" expression="V[0]"/>
+            <for variable="i" start="1" end="N-1" direction="inc" step="1">
+                <if expression="V[i] &gt; max">
+                    <then>
+                        <assign variable="max" expression="V[i]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+        </body>
+    </function>
+    <function name="trovaMin" type="Integer" variable="min">
+        <parameters>
+            <parameter name="V" type="Integer" array="True"/>
+            <parameter name="N" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i, min" type="Integer" array="False" size=""/>
+            <assign variable="min" expression="V[0]"/>
+            <for variable="i" start="1" end="N-1" direction="inc" step="1">
+                <if expression="V[i] &lt; min">
+                    <then>
+                        <assign variable="min" expression="V[i]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

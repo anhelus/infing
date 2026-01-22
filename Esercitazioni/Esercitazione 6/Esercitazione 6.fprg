@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Esercitazione 5"/>
+        <attribute name="authors" value="acard"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-01-22 10:55:20 "/>
+        <attribute name="created" value="YWNhcmQ7UkFHTkFST0c7MjAyNi0wMS0yMjsiMTA6NDc6MTEgIjsyMjg0"/>
+        <attribute name="edited" value="YWNhcmQ7UkFHTkFST0c7MjAyNi0wMS0yMjsiMTA6NTU6MjAgIjsxOzIzOTE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="N" type="Integer" array="False" size=""/>
+            <assign variable="N" expression="10"/>
+            <declare name="V" type="Real" array="True" size="N"/>
+            <call expression="generaTempi(V, N)"/>
+        </body>
+    </function>
+    <function name="generaTempi" type="None" variable="">
+        <parameters>
+            <parameter name="V" type="Real" array="True"/>
+            <parameter name="N" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="N-1" direction="inc" step="1">
+                <assign variable="V[i]" expression="random(100000)/1000"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
